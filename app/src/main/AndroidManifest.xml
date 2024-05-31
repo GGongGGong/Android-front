@@ -2,7 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
     <application
+        android:name=".ApplicationClass"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -11,16 +17,57 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.RidingBud"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
+
+        <!-->Native Key 필요<-->
+        <meta-data
+            android:name="com.kakao.sdk.AppKey"
+            android:value="@string/kakao_app_key"/>
+
         <activity
-            android:name=".MainActivity"
+            android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity"
             android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+
+                <!-->Native Key 필요<-->
+                <data android:host="oauth"
+                    android:scheme="@string/kakao_app_key_2"/>
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".ui.SplashActivity"
+            android:exported="true"
+            android:theme="@style/Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ui.PermissionActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".ui.user.LoginActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".ui.user.FindIdActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".ui.user.FindPasswordActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".ui.user.SignupActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".ui.MainActivity"
+            android:exported="false"/>
+
     </application>
 
 </manifest>

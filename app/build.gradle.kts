@@ -48,4 +48,20 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    // Retrofit2 Dependency
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+
+    // OkHttp3 Dependency
+    implementation(libs.okhttp)
+    implementation(libs.logging.interceptor)
+
+    // ViewModel Dependency
+    implementation(libs.lifecycle.viewmodel.ktx)
+    // Lifecycles only (without ViewModel or LiveData)
+    implementation(libs.lifecycle.runtime.ktx)
+
+    // 카카오 로그인 API 모듈
+    implementation(libs.v2.all)
 }
