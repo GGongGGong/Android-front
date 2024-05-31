@@ -17,6 +17,11 @@ class SignupActivity : AppCompatActivity() {
         setUi()
     }
 
+    override fun onPause() {
+        super.onPause()
+        overridePendingTransition(0,0)
+    }
+
     private fun setUi() {
 //        signupViewModel.memberId.observe(this) {
 //            finish()
@@ -35,6 +40,7 @@ class SignupActivity : AppCompatActivity() {
 //                        signupStateEditText.text.toString()
 //                    )
                     Toast.makeText(this.root.context, "회원가입 성공!", Toast.LENGTH_SHORT).show()
+                    finish()
                 }
             }
         }

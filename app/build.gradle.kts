@@ -61,4 +61,7 @@ dependencies {
     implementation(libs.lifecycle.viewmodel.ktx)
     // Lifecycles only (without ViewModel or LiveData)
     implementation(libs.lifecycle.runtime.ktx)
+
+    // 카카오 로그인 API 모듈
+    implementation(libs.v2.all)
 }

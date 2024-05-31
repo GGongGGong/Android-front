@@ -19,6 +19,10 @@ class SplashActivity : AppCompatActivity() {
         }, 3000)
     }
 
+    override fun onPause() {
+        super.onPause()
+        overridePendingTransition(0,0)
+    }
     override fun onBackPressed() {
         super.onBackPressed()
     }

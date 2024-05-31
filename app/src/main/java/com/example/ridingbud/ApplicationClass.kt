@@ -4,6 +4,7 @@ import android.app.Application
 import com.example.ridingbud.common.SharedPreferences
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
+import com.kakao.sdk.common.KakaoSdk
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -13,20 +14,20 @@ import java.util.concurrent.TimeUnit
 class ApplicationClass : Application() {
 
     companion object {
-        const val SERVER_URL = "http://15.164.103.242:8081/api/"
+        const val SERVER_URL = "http://www.riding-bud.shop/api/"
         lateinit var retrofit: Retrofit
         lateinit var sharedPreferencesUtil: SharedPreferences
         const val MEMBER_ID = "memberId"
         const val ACCESS_TOKEN = "accessToken"
         const val REFRESH_TOKEN = "refreshToken"
-        const val CHALLENGE_ID = "challengeId"
-        const val BOARD_ITEM = "boardItem"
-        const val CHAT_ITEM = "chatItem"
-        const val USER_INFO = "userInfo"
     }
 
     override fun onCreate() {
         super.onCreate()
+
+        // Kakao Sdk 초기화 - Native Key 필요
+        KakaoSdk.init(this, "")
+
         sharedPreferencesUtil = SharedPreferences(applicationContext)
         val loggingInterceptor = HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
         val okHttpClient = OkHttpClient.Builder()

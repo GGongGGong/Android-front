@@ -209,7 +209,7 @@
             android:id="@+id/signup_nickname_editText"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:hint="지구지킴이"
+            android:hint="두바퀴"
             android:textSize="16dp"
             android:textStyle="bold"
             android:inputType="textLongMessage"

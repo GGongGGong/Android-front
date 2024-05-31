@@ -19,12 +19,9 @@ class PermissionActivity : AppCompatActivity() {
     lateinit var binding: ActivityPermissionBinding
     private val REQUEST_PERMISSIONS = 1
     private val permissionList = mutableListOf(
-        Manifest.permission.CAMERA,
-        Manifest.permission.READ_EXTERNAL_STORAGE,
-        Manifest.permission.WRITE_EXTERNAL_STORAGE,
         Manifest.permission.ACCESS_COARSE_LOCATION,
         Manifest.permission.ACCESS_FINE_LOCATION,
-        )
+    )
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,15 +32,20 @@ class PermissionActivity : AppCompatActivity() {
         checkPermission()
     }
 
+    override fun onPause() {
+        super.onPause()
+        overridePendingTransition(0,0)
+    }
+
     private fun checkPermission() {
         var status = true
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            permissionList.add(Manifest.permission.READ_MEDIA_VIDEO)
-            permissionList.add(Manifest.permission.READ_MEDIA_AUDIO)
-            permissionList.add(Manifest.permission.READ_MEDIA_IMAGES)
-            permissionList.add(Manifest.permission.POST_NOTIFICATIONS)
-            permissionList.remove(Manifest.permission.READ_EXTERNAL_STORAGE)
-            permissionList.remove(Manifest.permission.WRITE_EXTERNAL_STORAGE)
+//            permissionList.add(Manifest.permission.READ_MEDIA_VIDEO)
+//            permissionList.add(Manifest.permission.READ_MEDIA_AUDIO)
+//            permissionList.add(Manifest.permission.READ_MEDIA_IMAGES)
+//            permissionList.add(Manifest.permission.POST_NOTIFICATIONS)
+//            permissionList.remove(Manifest.permission.READ_EXTERNAL_STORAGE)
+//            permissionList.remove(Manifest.permission.WRITE_EXTERNAL_STORAGE)
         }
         permissionList.forEach {
             if (ContextCompat.checkSelfPermission(this, it) == PackageManager.PERMISSION_DENIED) {
