@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/topbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/profile_setting_background"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/back_btn"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:background="@drawable/back_icon"
+            android:layout_margin="24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="프로필 설정"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topbar"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/img_setting_box"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/current_img"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/profile_icon_1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <TextView
+                    android:id="@+id/img_setting_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="프로필 사진 변경"
+                    android:textSize="12dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/blue1"
+                    android:clickable="true"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/current_img"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+                <Button
+                    android:id="@+id/img_setting_btn"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:background="@drawable/setting_icon"
+                    android:backgroundTint="@color/blue1"
+                    app:layout_constraintStart_toEndOf="@id/img_setting_title"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/current_img"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/nickname_setting_box"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="24dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/img_setting_box">
+
+                <TextView
+                    android:id="@+id/edit_nickname_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="닉네임"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/gray2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <EditText
+                    android:id="@+id/edit_nickname_editText"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:hint="두바퀴"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/gray2"
+                    android:inputType="textLongMessage"
+                    android:background="@drawable/gray_background_2"
+                    android:paddingStart="24dp"
+                    android:paddingEnd="24dp"
+                    android:layout_marginTop="4dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/edit_nickname_title"/>
+
+                <TextView
+                    android:id="@+id/nickname_warning_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="※ 닉네임 설정 시 "
+                    android:textSize="12sp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/edit_nickname_editText"/>
+
+                <TextView
+                    android:id="@+id/nickname_warning_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="30일간 변경할 수 없습니다."
+                    android:textStyle="bold"
+                    android:textColor="@color/red"
+                    android:textSize="12sp"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintStart_toEndOf="@id/nickname_warning_1"
+                    app:layout_constraintTop_toBottomOf="@id/edit_nickname_editText"/>
+
+                <Button
+                    android:id="@+id/nickname_setting_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:text="닉네임 변경"
+                    android:textSize="12sp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:background="@drawable/profile_setting_btn_background"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/edit_nickname_editText"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/password_setting_box"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="24dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/nickname_setting_box">
+
+                <TextView
+                    android:id="@+id/current_password_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="현재 비밀번호"
+                    android:textSize="12sp"
+                    android:textColor="@color/gray2"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <EditText
+                    android:id="@+id/current_password_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:hint="현재 비밀번호"
+                    android:textSize="16sp"
+                    android:textColor="@color/gray2"
+                    android:textStyle="bold"
+                    android:inputType="textPassword"
+                    android:background="@drawable/gray_background_2"
+                    android:paddingStart="24dp"
+                    android:paddingEnd="24dp"
+                    android:layout_marginTop="4dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/current_password_title"/>
+
+                <TextView
+                    android:id="@+id/edit_password_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="새 비밃번호"
+                    android:textSize="12sp"
+                    android:textColor="@color/gray2"
+                    android:textStyle="bold"
+                    android:layout_marginTop="24dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/current_password_et"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="영문, 숫자, 특문이 2종류 이상 조합된 8-20자"
+                    android:textSize="12sp"
+                    android:textColor="@color/gray2"
+                    android:textStyle="bold"
+                    android:layout_marginTop="24dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/current_password_et"/>
+
+                <EditText
+                    android:id="@+id/edit_password_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:hint="새 비밀번호"
+                    android:textSize="16sp"
+                    android:textColor="@color/gray2"
+                    android:textStyle="bold"
+                    android:inputType="textPassword"
+                    android:background="@drawable/gray_background_2"
+                    android:paddingStart="24dp"
+                    android:paddingEnd="24dp"
+                    android:layout_marginTop="4dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/edit_password_title"/>
+
+                <EditText
+                    android:id="@+id/edit_password_check_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:hint="새 비밀번호 확인"
+                    android:textSize="16sp"
+                    android:textColor="@color/gray2"
+                    android:textStyle="bold"
+                    android:inputType="textPassword"
+                    android:background="@drawable/gray_background_2"
+                    android:paddingStart="24dp"
+                    android:paddingEnd="24dp"
+                    android:layout_marginTop="4dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/edit_password_et"/>
+
+                <Button
+                    android:id="@+id/password_setting_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:text="비밀번호 변경"
+                    android:textSize="12sp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:background="@drawable/profile_setting_btn_background"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/edit_password_check_et"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/email_setting_box"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="24dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/password_setting_box">
+
+                <TextView
+                    android:id="@+id/email_setting_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="E-mail"
+                    android:textColor="@color/gray2"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <EditText
+                    android:id="@+id/email_setting_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:hint="abcdefghijk@naver.com"
+                    android:textSize="16dp"
+                    android:textColor="@color/gray2"
+                    android:textStyle="bold"
+                    android:inputType="textLongMessage"
+                    android:background="@drawable/gray_background_2"
+                    android:paddingStart="24dp"
+                    android:paddingEnd="24dp"
+                    android:layout_marginTop="4dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/email_setting_title"/>
+
+                <Button
+                    android:id="@+id/email_setting_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:text="이메일 변경"
+                    android:textSize="12sp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:background="@drawable/profile_setting_btn_background"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/email_setting_et"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/status_setting_box"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="24dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/email_setting_box"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <TextView
+                    android:id="@+id/status_setting_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="상태 메세지"
+                    android:textSize="12dp"
+                    android:textColor="@color/gray2"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <EditText
+                    android:id="@+id/status_setting_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:hint="상태 메세지를 입력하세요..."
+                    android:textSize="16dp"
+                    android:textColor="@color/gray2"
+                    android:textStyle="bold"
+                    android:inputType="textLongMessage"
+                    android:background="@drawable/gray_background_2"
+                    android:paddingStart="24dp"
+                    android:paddingEnd="24dp"
+                    android:layout_marginTop="4dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/status_setting_title"/>
+
+                <Button
+                    android:id="@+id/status_setting_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:text="상태 변경"
+                    android:textSize="12dp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:background="@drawable/profile_setting_btn_background"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/status_setting_et" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
