@@ -1,36 +1,36 @@
 package com.example.ridingbud.ui.adapter
 
+import android.content.Context
 import android.os.Build
+import android.util.Log
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import android.widget.PopupMenu
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.ridingbud.databinding.ItemCourseBinding
+import com.example.ridingbud.databinding.ItemCourseMapBinding
 import com.example.ridingbud.model.Course
 
-class MyBookmarksAdapter : ListAdapter<Course, MyBookmarksAdapter.CoursesViewHolder>(
-    BoardAllDiffCallback()
+class CoursesMapAdapter : ListAdapter<Course, CoursesMapAdapter.BoardsViewHolder>(
+    CoursesMapDiffCallback()
 ) {
-    private lateinit var binding: ItemCourseBinding
+    private lateinit var binding: ItemCourseMapBinding
 
-    inner class CoursesViewHolder(private val binding: ItemCourseBinding) :
+    inner class BoardsViewHolder(private val binding: ItemCourseMapBinding) :
         RecyclerView.ViewHolder(binding.root) {
         @RequiresApi(Build.VERSION_CODES.Q)
         fun setBind(course: Course) {
             binding.apply {
-                // 코스 이름 설정
                 courseName.text = course.courseName
-                // 코스 거리 설정
                 distance.text = course.distance
-                // 코스 예상 시간 설정
                 time.text = course.time
-                // 즐겨찾기 버튼 설정
                 bookmarkBtn.setOnClickListener {
-                    deleteCourseListener.onClick(course = course)
+
                 }
-                // 코스 자세히 보기
                 root.setOnClickListener {
                     detailCourseListener.onClick(course = course)
                 }
@@ -38,29 +38,24 @@ class MyBookmarksAdapter : ListAdapter<Course, MyBookmarksAdapter.CoursesViewHol
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CoursesViewHolder {
-        binding = ItemCourseBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return CoursesViewHolder(binding)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BoardsViewHolder {
+        binding = ItemCourseMapBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return BoardsViewHolder(binding)
     }
 
     @RequiresApi(Build.VERSION_CODES.Q)
-    override fun onBindViewHolder(holder: CoursesViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: BoardsViewHolder, position: Int) {
         holder.setBind(getItem(position))
     }
 
     interface DetailCourseListener {
         fun onClick(course: Course)
     }
-    interface DeleteCourseListener {
-        fun onClick(course: Course)
-    }
 
     lateinit var detailCourseListener: DetailCourseListener
-    lateinit var deleteCourseListener: DeleteCourseListener
-
 }
 
-class BoardAllDiffCallback : DiffUtil.ItemCallback<Course>() {
+class CoursesMapDiffCallback : DiffUtil.ItemCallback<Course>() {
     override fun areItemsTheSame(oldItem: Course, newItem: Course): Boolean {
         return oldItem.courseId == newItem.courseId
     }

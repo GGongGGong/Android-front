@@ -1,36 +1,64 @@
 package com.example.ridingbud.ui.adapter
-import android.annotation.SuppressLint
+
+import android.os.Build
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.annotation.RequiresApi
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.example.ridingbud.R
 import com.example.ridingbud.databinding.ItemCourseBinding
-import com.example.ridingbud.model.CourseItem
+import com.example.ridingbud.model.Course
 
-class CoursesAdapter(private var courses: List<CourseItem>) : RecyclerView.Adapter<CoursesAdapter.CourseViewHolder>() {
+class CoursesAdapter : ListAdapter<Course, CoursesAdapter.BoardsViewHolder>(
+    BoardAllDiffCallback()
+) {
+    private lateinit var binding: ItemCourseBinding
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CourseViewHolder {
-        val binding = ItemCourseBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return CourseViewHolder(binding)
-    }
+    inner class BoardsViewHolder(private val binding: ItemCourseBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+        @RequiresApi(Build.VERSION_CODES.Q)
+        fun setBind(course: Course) {
+            binding.apply {
+                courseName.text = course.courseName
+                distance.text = course.distance
+                time.text = course.time
+                if (course.isBookmarked) bookmarkBtn.setImageResource(R.drawable.bookmark_on_icon)
+                else bookmarkBtn.setImageResource(R.drawable.bookmark_off_icon)
+                bookmarkBtn.setOnClickListener {
 
-    override fun onBindViewHolder(holder: CourseViewHolder, position: Int) {
-        holder.bind(courses[position])
-    }
-
-    override fun getItemCount() = courses.size
-
-    @SuppressLint("NotifyDataSetChanged")
-    fun updateCourses(newCourses: List<CourseItem>) {
-        courses = newCourses
-        notifyDataSetChanged()
-    }
-
-    class CourseViewHolder(private val binding: ItemCourseBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(course: CourseItem) {
-            binding.courseName.text = course.name
-            binding.distance.text = course.distance
-            binding.time.text = course.time
-            // rating이 XML에 없으므로 이 부분은 생략합니다.
+                }
+                root.setOnClickListener {
+                    detailCourseListener.onClick(course = course)
+                }
+            }
         }
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BoardsViewHolder {
+        binding = ItemCourseBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return BoardsViewHolder(binding)
+    }
+
+    @RequiresApi(Build.VERSION_CODES.Q)
+    override fun onBindViewHolder(holder: BoardsViewHolder, position: Int) {
+        holder.setBind(getItem(position))
+    }
+
+    interface DetailCourseListener {
+        fun onClick(course: Course)
+    }
+
+    lateinit var detailCourseListener: DetailCourseListener
+}
+
+class BoardAllDiffCallback : DiffUtil.ItemCallback<Course>() {
+    override fun areItemsTheSame(oldItem: Course, newItem: Course): Boolean {
+        return oldItem.courseId == newItem.courseId
+    }
+
+    override fun areContentsTheSame(oldItem: Course, newItem: Course): Boolean {
+        return oldItem == newItem
     }
 }
