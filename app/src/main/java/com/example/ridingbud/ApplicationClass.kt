@@ -5,6 +5,7 @@ import com.example.ridingbud.common.SharedPreferences
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.kakao.sdk.common.KakaoSdk
+import com.kakao.vectormap.KakaoMapSdk
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -26,8 +27,9 @@ class ApplicationClass : Application() {
     override fun onCreate() {
         super.onCreate()
 
-        // Kakao Sdk 초기화 - Native Key 필요
-        KakaoSdk.init(this, "")
+        // Kakao (Map) SDK 초기화 - Native Key 필요
+//        KakaoSdk.init(this, "")
+//        KakaoMapSdk.init(this, "")
 
         sharedPreferencesUtil = SharedPreferences(applicationContext)
         val loggingInterceptor = HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)

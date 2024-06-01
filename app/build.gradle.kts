@@ -65,6 +65,9 @@ dependencies {
     // 카카오 로그인 API 모듈
     implementation(libs.v2.all)
 
+    // 카카오 맵 API 모듈
+    implementation(libs.kakao.maps.android)
+
     // Fremework KTX Dependency
     implementation(libs.fragment.ktx)
     implementation(libs.activity.ktx)

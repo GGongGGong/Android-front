@@ -68,6 +68,9 @@
             android:name=".ui.MainActivity"
             android:exported="false"/>
         <activity
+            android:name=".ui.riding.RidingActivity"
+            android:exported="false"/>
+        <activity
             android:name=".ui.mypage.MyBookmarkListActivity"
             android:exported="false"/>
         <activity
