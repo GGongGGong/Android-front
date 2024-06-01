@@ -12,6 +12,8 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.ridingbud.R
 import com.example.ridingbud.databinding.ActivityMainBinding
+import com.example.ridingbud.ui.community.CommunityFragment
+import com.example.ridingbud.ui.convenience.ConvenienceFragment
 import com.example.ridingbud.ui.mypage.MyPageFragment
 import com.example.ridingbud.ui.riding.RidingFragment
 import com.kakao.sdk.common.util.Utility
@@ -40,9 +42,9 @@ class MainActivity : AppCompatActivity() {
         binding.bnv.setOnItemSelectedListener {item ->
             val transaction = supportFragmentManager.beginTransaction()
             when(item.itemId) {
-//                R.id.riding -> transaction.replace(R.id.fragment_container, UserHomeFragment())
-//                R.id.facility -> transaction.replace(R.id.fragment_container, SearchFragment())
-//                R.id.community -> transaction.replace(R.id.fragment_container, CommunityFragment())
+                R.id.riding -> transaction.replace(R.id.fragment_container, RidingFragment())
+                R.id.facility -> transaction.replace(R.id.fragment_container, ConvenienceFragment())
+                R.id.community -> transaction.replace(R.id.fragment_container, CommunityFragment())
                 R.id.mypage -> transaction.replace(R.id.fragment_container, MyPageFragment())
             }
             transaction.commit()
