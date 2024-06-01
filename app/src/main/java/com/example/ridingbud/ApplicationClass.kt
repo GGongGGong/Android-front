@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit
 class ApplicationClass : Application() {
 
     companion object {
-        const val SERVER_URL = "http://www.riding-bud.shop/api/"
+        const val SERVER_URL = "http://13.209.99.123:8080/api/"
         lateinit var retrofit: Retrofit
         lateinit var sharedPreferencesUtil: SharedPreferences
         const val MEMBER_ID = "memberId"
@@ -28,7 +28,7 @@ class ApplicationClass : Application() {
         super.onCreate()
 
         // Kakao (Map) SDK 초기화 - Native Key 필요
-//        KakaoSdk.init(this, "")
+        KakaoSdk.init(this, "91b8238b24afff9e6a6e914eb3fa086d")
         KakaoMapSdk.init(this, "91b8238b24afff9e6a6e914eb3fa086d")
 
         sharedPreferencesUtil = SharedPreferences(applicationContext)

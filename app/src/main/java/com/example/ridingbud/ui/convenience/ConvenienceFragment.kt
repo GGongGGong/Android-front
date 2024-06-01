@@ -11,8 +11,11 @@ import android.view.ViewGroup
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import com.example.ridingbud.R
 import com.example.ridingbud.databinding.FragmentConvenienceBinding
+import com.example.ridingbud.viewmodel.ConvenienceViewModel
+import com.example.ridingbud.viewmodel.MyProfileViewModel
 import com.google.android.gms.location.LocationServices
 import com.kakao.vectormap.KakaoMap
 import com.kakao.vectormap.KakaoMapReadyCallback
@@ -22,12 +25,22 @@ import com.kakao.vectormap.MapView
 import com.kakao.vectormap.label.LabelOptions
 import com.kakao.vectormap.label.LabelStyle
 import com.kakao.vectormap.label.LabelStyles
+import java.util.Arrays
 
 class ConvenienceFragment : Fragment() {
 
     private var _binding: FragmentConvenienceBinding? = null
     private val binding get() = _binding!!
     private lateinit var mapView: MapView
+    private val convenienceViewModel: ConvenienceViewModel by viewModels()
+    var markerPos = Arrays.asList(
+        LatLng.from(35.87711, 128.5974),
+        LatLng.from(35.87140, 128.6044),
+        LatLng.from(35.87116, 128.5941),
+        LatLng.from(35.87200, 128.5910),
+        LatLng.from(35.87214, 128.596),
+        LatLng.from(35.87491, 128.5959),
+    )
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -66,14 +79,28 @@ class ConvenienceFragment : Fragment() {
                 val styles =
                     kakaoMap.labelManager?.addLabelStyles(LabelStyles.from(LabelStyle.from(R.drawable.convenience_marker_icon)))
 
-                // Create LabelOptions with the coordinates and styles
-                val options = LabelOptions.from(LatLng.from(35.87491, 128.5959)).setStyles(styles)
+//                convenienceViewModel.bicycleRentals.observe(viewLifecycleOwner) {
+//                    for (bicycle in it) {
+//                        // Create LabelOptions with the coordinates and styles
+//                        val options = LabelOptions.from(LatLng.from(bicycle.x.toDouble(),bicycle.y.toDouble())).setStyles(styles)
+//
+//                        // Get LabelLayer with layerId (or create custom Layer)
+//                        val layer = kakaoMap.labelManager?.getLayer()
+//
+//                        // Add Label to LabelLayer
+//                        layer?.addLabel(options)?.show()
+//                    }
+//                }
+                for (item in markerPos) {
+                    // Create LabelOptions with the coordinates and styles
+                    val options = LabelOptions.from(LatLng.from(item.latitude,item.longitude)).setStyles(styles)
 
-                // Get LabelLayer with layerId (or create custom Layer)
-                val layer = kakaoMap.labelManager?.getLayer()
+                    // Get LabelLayer with layerId (or create custom Layer)
+                    val layer = kakaoMap.labelManager?.getLayer()
 
-                // Add Label to LabelLayer
-                layer?.addLabel(options)?.show()
+                    // Add Label to LabelLayer
+                    layer?.addLabel(options)?.show()
+                }
 
                 // Handle user's current location
                 binding.btnCurrentLocation.setOnClickListener {
