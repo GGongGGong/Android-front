@@ -39,16 +39,17 @@ android {
 }
 
 dependencies {
-
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.recyclerview)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
+    implementation("com.squareup.retrofit2:converter-scalars:2.6.4")
     // Retrofit2 Dependency
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
@@ -64,6 +65,7 @@ dependencies {
 
     // 카카오 로그인 API 모듈
     implementation(libs.v2.all)
+
 
     // 카카오 맵 API 모듈
     implementation(libs.kakao.maps.android)
