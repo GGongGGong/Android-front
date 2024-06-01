@@ -23,6 +23,11 @@ class MyBookmarkListActivity : AppCompatActivity() {
         setUi()
     }
 
+    override fun onPause() {
+        super.onPause()
+        overridePendingTransition(0,0)
+    }
+
     private fun setAdapter() {
         // Adapter 설정
         val myBookmarksAdapter = MyBookmarksAdapter()

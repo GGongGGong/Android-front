@@ -19,6 +19,11 @@ class ProfileSettingActivity : AppCompatActivity() {
         setUi()
     }
 
+    override fun onPause() {
+        super.onPause()
+        overridePendingTransition(0,0)
+    }
+
     private fun setUi() {
         binding.apply {
             backBtn.setOnClickListener {

@@ -18,6 +18,8 @@ lifecycle-runtime-ktx = "2.8.1"
 v2-all = "2.12.1"
 fragment-ktx = "1.7.1"
 activity-ktx = "1.9.0"
+kakao-maps-android = "2.9.5"
+play-services-location = "21.3.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -37,6 +39,8 @@ lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtim
 v2-all = { group = "com.kakao.sdk", name = "v2-all", version.ref = "v2-all" }
 fragment-ktx = { group = "androidx.fragment", name = "fragment-ktx", version.ref = "fragment-ktx" }
 activity-ktx = { group = "androidx.activity", name = "activity-ktx", version.ref = "activity-ktx" }
+kakao-maps-android = { group = "com.kakao.maps.open", name = "android", version.ref = "kakao-maps-android" }
+play-services-location = { group = "com.google.android.gms", name = "play-services-location", version.ref = "play-services-location" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
