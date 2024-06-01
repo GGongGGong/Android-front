@@ -30,6 +30,9 @@ import com.kakao.vectormap.LatLng
 import com.kakao.vectormap.MapLifeCycleCallback
 import com.kakao.vectormap.MapViewInfo
 import com.kakao.vectormap.camera.CameraUpdateFactory
+import com.kakao.vectormap.label.LabelOptions
+import com.kakao.vectormap.label.LabelStyle
+import com.kakao.vectormap.label.LabelStyles
 import com.kakao.vectormap.route.RouteLineOptions
 import com.kakao.vectormap.route.RouteLinePattern
 import com.kakao.vectormap.route.RouteLineSegment
@@ -46,6 +49,25 @@ class RidingActivity : AppCompatActivity() {
         Course(0, "대구시내 근대골목 A코스", "10 km", "1 시간", 5.0, false),
         Course(0, "대구시내 근대골목 B코스", "9 km", "1 시간", 5.0, false),
         Course(0, "신천 금호강 상류 코스", "15 km", "2 시간", 4.5, true)
+    )
+    var markerPos = Arrays.asList(
+        LatLng.from(35.87711, 128.5974),
+        LatLng.from(35.87682, 128.6045),
+        LatLng.from(35.87140, 128.6044),
+        LatLng.from(35.86953, 128.6026),
+        LatLng.from(35.87088, 128.5956),
+        LatLng.from(35.87116, 128.5941),
+        LatLng.from(35.86985, 128.5938),
+        LatLng.from(35.86852, 128.5926),
+        LatLng.from(35.86847, 128.5902),
+        LatLng.from(35.86756, 128.5864),
+        LatLng.from(35.86888, 128.5824),
+        LatLng.from(35.86867, 128.5814),
+        LatLng.from(35.87368, 128.5801),
+        LatLng.from(35.87391, 128.5876),
+        LatLng.from(35.87200, 128.5910),
+        LatLng.from(35.87214, 128.596),
+        LatLng.from(35.87491, 128.5959),
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -88,7 +110,7 @@ class RidingActivity : AppCompatActivity() {
             }
         // RecyclerView 설정
         binding.courseRv.apply {
-            layoutManager = LinearLayoutManager(this.context,LinearLayoutManager.HORIZONTAL,false)
+            layoutManager = LinearLayoutManager(this.context, LinearLayoutManager.HORIZONTAL, false)
             adapter = coursesMapAdapter
         }
         // RecyclerView Item 설정
@@ -180,12 +202,21 @@ class RidingActivity : AppCompatActivity() {
                 object : KakaoMapReadyCallback() {
                     override fun onMapReady(map: KakaoMap) {
                         // 인증 후 API 가 정상적으로 실행될 때 호출됨
-                        //setRoute(map = map)
+                        setRoute(map = map)
+                        // 마커 설정
+                        setMarker(map = map)
                         // 사용자의 현재 위치 버튼 기능
                         myLocationBtn.setOnClickListener {
                             locationProviderClient.lastLocation
                                 .addOnSuccessListener { success: Location? ->
                                     success?.let { location ->
+                                        var styles =
+                                            map.labelManager?.addLabelStyles(LabelStyles.from(LabelStyle.from(R.drawable.user_location_icon)))
+                                        var options = LabelOptions.from(LatLng.from(location.latitude, location.longitude)).setStyles(styles)
+                                        var layer = map.labelManager?.getLayer()
+                                        var label = layer?.addLabel(options)
+                                        label?.show()
+
                                         // 사용자의 현재 위치로 이동
                                         map.moveCamera(
                                             CameraUpdateFactory.newCenterPosition(
@@ -233,17 +264,27 @@ class RidingActivity : AppCompatActivity() {
         // 3. RouteLineSegment 생성
         // 세그먼트에 스타일 설정을 생략하면, RouteLineStylesSet 의 index 0 번째에 해당되는 스타일로 설정
         var segment = RouteLineSegment.from(
-            Arrays.asList(
-                LatLng.from(37.338342, 127.092890),
-                LatLng.from(37.338605, 127.093759),
-                LatLng.from(37.338814, 127.094000),
-            )
+            markerPos
         ).setStyles(stylesSet.getStyles(0))
         // 4. RouteLineStylesSet 추가 및 RouteLineOptions 생성
         var options = RouteLineOptions.from(segment).setStylesSet(stylesSet)
         // 5. RouteLineLayer에 추가하여 RouteLine 생성
         var routeLine = layer?.addRouteLine(options)
         routeLine?.show()
+    }
+
+    private fun setMarker(map: KakaoMap) {
+        var styles =
+            map.labelManager?.addLabelStyles(LabelStyles.from(LabelStyle.from(R.drawable.marker_icon)))
+
+        for (item in markerPos) {
+            var options = LabelOptions.from(item).setStyles(styles)
+
+            var layer = map.labelManager?.getLayer()
+
+            var label = layer?.addLabel(options)
+            label?.show()
+        }
     }
 }
 
