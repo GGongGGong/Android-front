@@ -1,15 +1,25 @@
 package com.example.ridingbud.ui.riding
 
 import android.annotation.SuppressLint
+import android.app.Dialog
 import android.content.Context
 import android.graphics.Color
 import android.location.Location
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.view.Window
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.ridingbud.R
 import com.example.ridingbud.databinding.ActivityRidingBinding
+import com.example.ridingbud.databinding.RidingCompleteDialogBinding
+import com.example.ridingbud.model.Course
+import com.example.ridingbud.ui.adapter.CoursesMapAdapter
+import com.example.ridingbud.viewmodel.MyBookmarksViewModel
 import com.google.android.gms.location.LocationServices
 import com.kakao.vectormap.KakaoMap
 import com.kakao.vectormap.KakaoMapReadyCallback
@@ -28,12 +38,20 @@ import java.util.Arrays
 
 class RidingActivity : AppCompatActivity() {
     lateinit var binding: ActivityRidingBinding
+    private val myBookmarksViewModel: MyBookmarksViewModel by viewModels()
+    var courseData = mutableListOf(
+        Course(0, "대구시내 근대골목 A코스", "10 km", "1 시간", 5.0, false),
+        Course(0, "대구시내 근대골목 B코스", "9 km", "1 시간", 5.0, false),
+        Course(0, "신천 금호강 상류 코스", "15 km", "2 시간", 4.5, true)
+    )
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityRidingBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        setKakaoMap()
+        setAdapter()
         setUi()
     }
 
@@ -47,10 +65,49 @@ class RidingActivity : AppCompatActivity() {
         binding.mapView.pause()
     }
 
-    @SuppressLint("MissingPermission")
+    private fun setAdapter() {
+        // Adapter 설정
+        val coursesMapAdapter = CoursesMapAdapter()
+        coursesMapAdapter.detailCourseListener =
+            object : CoursesMapAdapter.DetailCourseListener {
+                override fun onClick(course: Course) {
+                    // 코스 자세히 보기로 이동
+//                    val intent = Intent(this@MyBookmarkListActivity, )
+//                    intent.putExtra(ApplicationClass.COURSE_ITEM, course)
+//                    startActivity(intent)
+                }
+            }
+        // RecyclerView 설정
+        binding.courseRv.apply {
+            layoutManager = LinearLayoutManager(this.context,LinearLayoutManager.HORIZONTAL,false)
+            adapter = coursesMapAdapter
+        }
+        // RecyclerView Item 설정
+        coursesMapAdapter.submitList(courseData)
+//        myBookmarksViewModel.myCourses.observe(this) {
+//            courseAdapter.submitList(it)
+//        }
+    }
+
     private fun setUi() {
-        val locationProviderClient =
-            LocationServices.getFusedLocationProviderClient(this@RidingActivity)
+        // Riding 종료 후 나타나는 Dialog
+        val dialogBinding = RidingCompleteDialogBinding.inflate(layoutInflater)
+        val dlg = Dialog(this)
+
+        dialogBinding.apply {
+            reviewBtn.setOnClickListener {
+                // Review 화면으로 이동
+
+                dlg.dismiss()
+            }
+            homeBtn.setOnClickListener {
+                // 홈으로 이동
+                finish()
+                dlg.dismiss()
+            }
+        }
+        dlg.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        dlg.setContentView(dialogBinding.root)
 
         binding.apply {
             // 뒤로가기 버튼 설정
@@ -60,7 +117,44 @@ class RidingActivity : AppCompatActivity() {
             backBtn.setOnClickListener {
                 finish()
             }
-            // KakaoMap 설정
+            myLocationBtn.setOnClickListener {
+
+            }
+            // 출발지 선택 화면 설정
+            startingCourseListBtn.setOnClickListener {
+                // 지도의 코스 목록 화면으로 이동
+
+            }
+            startingSelectBtn.setOnClickListener {
+
+                startingSelectBox.visibility = View.GONE
+                endingSelectBox.visibility = View.VISIBLE
+            }
+            // 도착지 선택 화면 설정
+            moveStartingSelectBtn.setOnClickListener {
+                // 출발지 선택 화면으로 이동
+
+            }
+            endingSelectBtn.setOnClickListener {
+
+                backBtnBox.visibility = View.GONE
+                endingSelectBox.visibility = View.GONE
+                ridingInfoBox.visibility = View.VISIBLE
+            }
+            // 라이딩 중인 화면 설정
+            stopBtn.setOnClickListener {
+                dlg.show()
+            }
+        }
+    }
+
+    @SuppressLint("MissingPermission")
+    private fun setKakaoMap() {
+        val locationProviderClient =
+            LocationServices.getFusedLocationProviderClient(this@RidingActivity)
+
+        // KakaoMap 설정
+        binding.apply {
             mapView.start(
                 object : MapLifeCycleCallback() {
                     override fun onMapDestroy() {
@@ -83,7 +177,14 @@ class RidingActivity : AppCompatActivity() {
                                 .addOnSuccessListener { success: Location? ->
                                     success?.let { location ->
                                         // 사용자의 현재 위치로 이동
-                                        map.moveCamera(CameraUpdateFactory.newCenterPosition(LatLng.from(location.latitude, location.longitude)))
+                                        map.moveCamera(
+                                            CameraUpdateFactory.newCenterPosition(
+                                                LatLng.from(
+                                                    location.latitude,
+                                                    location.longitude
+                                                )
+                                            )
+                                        )
                                     }
                                 }
                                 .addOnFailureListener { fail ->
