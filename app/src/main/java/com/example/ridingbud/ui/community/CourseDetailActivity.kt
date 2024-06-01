@@ -8,6 +8,7 @@ import com.example.ridingbud.databinding.ActivityCourseDetailBinding
 import com.example.ridingbud.model.Review
 import com.example.ridingbud.ui.adapter.ReviewAdapter
 import com.kakao.vectormap.MapView
+
 class CourseDetailActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityCourseDetailBinding

@@ -64,13 +64,13 @@ class ConvenienceFragment : Fragment() {
 
                 // Create LabelStyles with an icon image
                 val styles =
-                    kakaoMap.labelManager?.addLabelStyles(LabelStyles.from(LabelStyle.from(R.drawable.ic_pump)))
+                    kakaoMap.labelManager?.addLabelStyles(LabelStyles.from(LabelStyle.from(R.drawable.marker_icon)))
 
                 // Create LabelOptions with the coordinates and styles
                 val options = LabelOptions.from(LatLng.from(35.87491, 128.5959)).setStyles(styles)
 
                 // Get LabelLayer with layerId (or create custom Layer)
-                val layer = kakaoMap.labelManager?.getLayer()
+                val layer = kakaoMap.labelManager?.layer
 
                 // Add Label to LabelLayer
                 layer?.addLabel(options)?.show()
@@ -99,7 +99,7 @@ class ConvenienceFragment : Fragment() {
                         kakaoMap.labelManager?.addLabelStyles(LabelStyles.from(LabelStyle.from(R.drawable.user_location_icon)))
                     val options =
                         LabelOptions.from(LatLng.from(it.latitude, it.longitude)).setStyles(styles)
-                    val layer = kakaoMap.labelManager?.getLayer("userLocationLayer")
+                    val layer = kakaoMap.labelManager?.getLayer()
                     layer?.addLabel(options)?.show()
 
                     // Move camera to user's current location
