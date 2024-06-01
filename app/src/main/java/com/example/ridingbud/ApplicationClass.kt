@@ -29,7 +29,7 @@ class ApplicationClass : Application() {
 
         // Kakao (Map) SDK 초기화 - Native Key 필요
 //        KakaoSdk.init(this, "")
-//        KakaoMapSdk.init(this, "")
+        KakaoMapSdk.init(this, "91b8238b24afff9e6a6e914eb3fa086d")
 
         sharedPreferencesUtil = SharedPreferences(applicationContext)
         val loggingInterceptor = HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
