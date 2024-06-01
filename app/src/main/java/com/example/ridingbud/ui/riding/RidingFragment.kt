@@ -1,5 +1,6 @@
 package com.example.ridingbud.ui.riding
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.ridingbud.ApplicationClass
 import com.example.ridingbud.databinding.FragmentRidingBinding
 import com.example.ridingbud.model.Course
 import com.example.ridingbud.ui.adapter.CoursesAdapter
@@ -47,9 +49,9 @@ class RidingFragment : Fragment() {
             object : CoursesAdapter.DetailCourseListener {
                 override fun onClick(course: Course) {
                     // 코스 자세히 보기로 이동
-//                    val intent = Intent(this@MyBookmarkListActivity, )
-//                    intent.putExtra(ApplicationClass.COURSE_ITEM, course)
-//                    startActivity(intent)
+                    val intent = Intent(this@RidingFragment.context, RidingActivity::class.java)
+                    intent.putExtra(ApplicationClass.COURSE_ITEM, course)
+                    startActivity(intent)
                 }
             }
         // RecyclerView 설정
