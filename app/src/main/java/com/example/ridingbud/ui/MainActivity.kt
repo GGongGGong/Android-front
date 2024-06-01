@@ -12,6 +12,8 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.ridingbud.R
 import com.example.ridingbud.databinding.ActivityMainBinding
+import com.example.ridingbud.ui.mypage.MyPageFragment
+import com.example.ridingbud.ui.riding.RidingFragment
 import com.kakao.sdk.common.util.Utility
 import java.security.MessageDigest
 import java.security.NoSuchAlgorithmException
@@ -34,6 +36,17 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setUi() {
-
+        supportFragmentManager.beginTransaction().add(R.id.fragment_container, RidingFragment()).commit()
+        binding.bnv.setOnItemSelectedListener {item ->
+            val transaction = supportFragmentManager.beginTransaction()
+            when(item.itemId) {
+//                R.id.riding -> transaction.replace(R.id.fragment_container, UserHomeFragment())
+//                R.id.facility -> transaction.replace(R.id.fragment_container, SearchFragment())
+//                R.id.community -> transaction.replace(R.id.fragment_container, CommunityFragment())
+                R.id.mypage -> transaction.replace(R.id.fragment_container, MyPageFragment())
+            }
+            transaction.commit()
+            true
+        }
     }
 }

@@ -20,6 +20,7 @@ class ApplicationClass : Application() {
         const val MEMBER_ID = "memberId"
         const val ACCESS_TOKEN = "accessToken"
         const val REFRESH_TOKEN = "refreshToken"
+        const val COURSE_ITEM = "courseItem"
     }
 
     override fun onCreate() {

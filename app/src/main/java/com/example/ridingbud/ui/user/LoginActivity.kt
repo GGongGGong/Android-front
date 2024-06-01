@@ -1,9 +1,7 @@
 package com.example.ridingbud.ui.user
 
-import android.content.ContentValues.TAG
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.ridingbud.databinding.ActivityLoginBinding
@@ -45,6 +43,7 @@ class LoginActivity : AppCompatActivity() {
 //                logInViewModel.logIn(loginId.text.toString(), loginPassword.text.toString(), this@LoginActivity)
 //                hideKeyboard(this@LoginActivity)
                 startActivity(Intent(this@LoginActivity, MainActivity::class.java))
+                finish()
             }
             findIdBtn.setOnClickListener {
                 startActivity(Intent(this@LoginActivity, FindIdActivity::class.java))

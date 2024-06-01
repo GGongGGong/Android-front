@@ -64,4 +64,8 @@ dependencies {
 
     // 카카오 로그인 API 모듈
     implementation(libs.v2.all)
+
+    // Fremework KTX Dependency
+    implementation(libs.fragment.ktx)
+    implementation(libs.activity.ktx)
 }
