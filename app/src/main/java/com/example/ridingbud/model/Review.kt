@@ -9,4 +9,5 @@ data class Review(
     val date: String,
     val content: String,
     val likeNum: Int,
+    val userName: String
 ) : Serializable
