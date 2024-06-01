@@ -4,8 +4,8 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.ridingbud.R
-import com.example.ridingbud.databinding.Activity
-import net.daum.mf.map.api.MapView
+import com.example.ridingbud.databinding.ActivityReviewBinding
+import com.kakao.vectormap.MapView
 
 class ReviewActivity : AppCompatActivity() {
 
@@ -24,7 +24,7 @@ class ReviewActivity : AppCompatActivity() {
 
         // Initialize MapView
         mapView = MapView(this)
-        binding.mapView.addView(mapView)
+        binding.mapViewContainer.addView(mapView)
 
         // Submit Button click listener
         binding.btnSubmitReview.setOnClickListener {
@@ -43,21 +43,21 @@ class ReviewActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        mapView.onResume()
+        mapView.resume()
     }
 
     override fun onPause() {
         super.onPause()
-        mapView.onPause()
+        mapView.pause()
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        mapView.onDestroy()
+        binding.mapViewContainer.removeView(mapView)
+        mapView.destroyDrawingCache()
     }
 
     override fun onLowMemory() {
         super.onLowMemory()
-        mapView.onLowMemory()
     }
 }
