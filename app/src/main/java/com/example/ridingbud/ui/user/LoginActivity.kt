@@ -6,6 +6,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.ridingbud.databinding.ActivityLoginBinding
 import com.example.ridingbud.ui.MainActivity
+import com.example.ridingbud.ui.riding.RidingActivity
 import com.kakao.sdk.auth.model.OAuthToken
 import com.kakao.sdk.common.model.AuthErrorCause
 import com.kakao.sdk.common.model.ClientError
@@ -42,7 +43,8 @@ class LoginActivity : AppCompatActivity() {
             loginBtn.setOnClickListener {
 //                logInViewModel.logIn(loginId.text.toString(), loginPassword.text.toString(), this@LoginActivity)
 //                hideKeyboard(this@LoginActivity)
-                startActivity(Intent(this@LoginActivity, MainActivity::class.java))
+                startActivity(Intent(this@LoginActivity, RidingActivity::class.java))
+//                startActivity(Intent(this@LoginActivity, MainActivity::class.java))
                 finish()
             }
             findIdBtn.setOnClickListener {

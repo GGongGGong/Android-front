@@ -71,4 +71,7 @@ dependencies {
     // Fremework KTX Dependency
     implementation(libs.fragment.ktx)
     implementation(libs.activity.ktx)
+
+    // Google Location Service
+    implementation(libs.play.services.location)
 }
