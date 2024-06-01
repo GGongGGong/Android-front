@@ -43,7 +43,6 @@ class LoginActivity : AppCompatActivity() {
             loginBtn.setOnClickListener {
 //                logInViewModel.logIn(loginId.text.toString(), loginPassword.text.toString(), this@LoginActivity)
 //                hideKeyboard(this@LoginActivity)
-//                startActivity(Intent(this@LoginActivity, RidingActivity::class.java))
                 startActivity(Intent(this@LoginActivity, MainActivity::class.java))
                 finish()
             }
