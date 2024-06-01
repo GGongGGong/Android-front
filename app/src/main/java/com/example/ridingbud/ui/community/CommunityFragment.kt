@@ -1,5 +1,6 @@
 package com.example.ridingbud.ui.community
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,7 +12,7 @@ import com.example.ridingbud.databinding.FragmentCommunityBinding
 import com.example.ridingbud.model.Course
 import com.example.ridingbud.ui.adapter.CourseAdapter
 
-class CommunityFragment : Fragment() {
+class CommunityFragment : Fragment(), CourseAdapter.OnItemClickListener {
 
     private var _binding: FragmentCommunityBinding? = null
     private val binding get() = _binding!!
@@ -28,12 +29,12 @@ class CommunityFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         // Hot Course RecyclerView 설정
-        val hotCourseAdapter = CourseAdapter(getHotCourses())
+        val hotCourseAdapter = CourseAdapter(getHotCourses(), this)
         binding.hotCoursesRecyclerView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         binding.hotCoursesRecyclerView.adapter = hotCourseAdapter
 
         // Course RecyclerView 설정
-        val courseAdapter = CourseAdapter(getCourses())
+        val courseAdapter = CourseAdapter(getCourses(), this)
         binding.courseRv.layoutManager = LinearLayoutManager(context)
         binding.courseRv.adapter = courseAdapter
     }
@@ -56,6 +57,17 @@ class CommunityFragment : Fragment() {
             Course(4, "강정고령보 달성보 코스", "21 km", "11 시간", 4.2, false)
             // 추가 데이터 필요
         )
+    }
+
+    override fun onItemClick(course: Course) {
+        val intent = Intent(context, CourseDetailActivity::class.java).apply {
+            putExtra("courseId", course.courseId)
+            putExtra("courseName", course.courseName)
+            putExtra("courseDistance", course.distance)
+            putExtra("courseDuration", course.time)
+            putExtra("courseRating", course.rate)
+        }
+        startActivity(intent)
     }
 
     override fun onDestroyView() {
