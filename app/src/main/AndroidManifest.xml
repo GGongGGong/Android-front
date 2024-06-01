@@ -84,6 +84,15 @@
         <activity
             android:name=".ui.mypage.ProfileSettingActivity"
             android:exported="false"/>
+        <activity
+            android:name=".ui.community.CourseDetailActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".ui.community.ReviewActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".ui.convenience.ConvenienceActivity"
+            android:exported="false"/>
     </application>
 
 </manifest>

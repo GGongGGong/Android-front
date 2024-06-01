@@ -43,16 +43,16 @@ class CommunityFragment : Fragment() {
         binding.filterSpinner.adapter = spinnerAdapter
 
         // Setup RecyclerView for course list
-        val coursesAdapter = CoursesAdapter(getCourses("초급 목록"))
-        binding.coursesRecyclerView.layoutManager = LinearLayoutManager(context)
-        binding.coursesRecyclerView.adapter = coursesAdapter
+//        val coursesAdapter = CoursesAdapter(getCourses("초급 목록"))
+//        binding.coursesRecyclerView.layoutManager = LinearLayoutManager(context)
+//        binding.coursesRecyclerView.adapter = coursesAdapter
 
         // Spinner item selected listener
         binding.filterSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
                 val selectedCategory = parent.getItemAtPosition(position).toString()
                 val filteredCourses = getCourses(selectedCategory)
-                coursesAdapter.updateCourses(filteredCourses)
+//                coursesAdapter.updateCourses(filteredCourses)
             }
 
             override fun onNothingSelected(parent: AdapterView<*>) {

@@ -52,6 +52,7 @@ dependencies {
     // Retrofit2 Dependency
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
+    implementation(libs.converter.scalars)
 
     // OkHttp3 Dependency
     implementation(libs.okhttp)

@@ -3,6 +3,7 @@ package com.example.ridingbud.ui.riding
 import android.annotation.SuppressLint
 import android.app.Dialog
 import android.content.Context
+import android.content.Intent
 import android.graphics.Color
 import android.location.Location
 import android.os.Bundle
@@ -18,7 +19,9 @@ import com.example.ridingbud.R
 import com.example.ridingbud.databinding.ActivityRidingBinding
 import com.example.ridingbud.databinding.RidingCompleteDialogBinding
 import com.example.ridingbud.model.Course
+import com.example.ridingbud.ui.MainActivity
 import com.example.ridingbud.ui.adapter.CoursesMapAdapter
+import com.example.ridingbud.ui.community.ReviewActivity
 import com.example.ridingbud.viewmodel.MyBookmarksViewModel
 import com.google.android.gms.location.LocationServices
 import com.kakao.vectormap.KakaoMap
@@ -103,7 +106,8 @@ class RidingActivity : AppCompatActivity() {
         dialogBinding.apply {
             reviewBtn.setOnClickListener {
                 // Review 화면으로 이동
-
+                startActivity(Intent(this@RidingActivity, ReviewActivity::class.java))
+                finish()
                 dlg.dismiss()
             }
             homeBtn.setOnClickListener {
