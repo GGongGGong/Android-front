@@ -43,7 +43,6 @@ class LoginActivity : AppCompatActivity() {
             loginBtn.setOnClickListener {
 //                logInViewModel.logIn(loginId.text.toString(), loginPassword.text.toString(), this@LoginActivity)
 //                hideKeyboard(this@LoginActivity)
-//                startActivity(Intent(this@LoginActivity, RidingActivity::class.java))
                 startActivity(Intent(this@LoginActivity, MainActivity::class.java))
                 finish()
             }
@@ -69,7 +68,7 @@ class LoginActivity : AppCompatActivity() {
                 Toast.makeText(this, "로그인 정보 확인 - 토큰 정보 보기 실패", Toast.LENGTH_SHORT).show()
             }
             else if (tokenInfo != null) {
-//                Toast.makeText(this, "로그인 정보 확인 - 토큰 정보 보기 성공", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "로그인 정보 확인 - 토큰 정보 보기 성공", Toast.LENGTH_SHORT).show()
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
                 finish()
