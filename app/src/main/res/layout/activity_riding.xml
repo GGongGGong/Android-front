@@ -50,10 +50,257 @@
         android:id="@+id/course_rv"
         android:layout_width="0dp"
         android:layout_height="192dp"
-        android:layout_margin="24dp"
+        android:layout_margin="8dp"
         android:orientation="horizontal"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:listitem="@layout/item_course_map" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/starting_select_box"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/course_map_background"
+        android:layout_margin="24dp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:id="@+id/starting_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="출발할 지점을 선택하세요!"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_margin="24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/starting_select_marker_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="마커 선택"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:textColor="@color/gray2"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="4dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/starting_title"/>
+
+        <TextView
+            android:id="@+id/starting_text_mark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="지점명"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/starting_select_marker_text"/>
+
+        <TextView
+            android:id="@+id/starting_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="칠성시장역"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toEndOf="@id/starting_text_mark"
+            app:layout_constraintTop_toBottomOf="@id/starting_select_marker_text" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/starting_course_list_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/riding_btn_background"
+            android:clickable="true"
+            app:layout_constraintEnd_toStartOf="@id/starting_select_btn"
+            app:layout_constraintTop_toBottomOf="@id/starting_text"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <TextView
+                android:id="@+id/starting_course_list_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="목록으로 이동"
+                android:textSize="12sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/starting_select_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:background="@drawable/riding_btn_background"
+            android:clickable="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/starting_text"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <TextView
+                android:id="@+id/starting_select_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="선택 완료"
+                android:textSize="12sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ending_select_box"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/course_map_background"
+        android:layout_margin="24dp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:id="@+id/ending_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="도착할 지점을 선택하세요!"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_margin="24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/ending_marker_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="마커 선택"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:textColor="@color/gray2"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="4dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ending_title"/>
+
+        <TextView
+            android:id="@+id/ending_text_mark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="지점명"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ending_marker_text"/>
+
+        <TextView
+            android:id="@+id/ending_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CGV대구아카데미"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toEndOf="@id/ending_text_mark"
+            app:layout_constraintTop_toBottomOf="@id/ending_marker_text" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/ending_course_list_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/riding_btn_background"
+            android:clickable="true"
+            app:layout_constraintEnd_toStartOf="@id/ending_select_btn"
+            app:layout_constraintTop_toBottomOf="@id/ending_text"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <TextView
+                android:id="@+id/ending_move_course_list_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="목록으로 이동"
+                android:textSize="12sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/ending_select_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:background="@drawable/riding_btn_background"
+            android:clickable="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ending_text"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <TextView
+                android:id="@+id/ending_select_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="선택 완료"
+                android:textSize="12sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
