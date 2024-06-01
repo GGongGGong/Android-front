@@ -31,8 +31,11 @@ class CoursesMapAdapter : ListAdapter<Course, CoursesMapAdapter.BoardsViewHolder
                 bookmarkBtn.setOnClickListener {
 
                 }
-                root.setOnClickListener {
-                    detailCourseListener.onClick(course = course)
+                backBtn.setOnClickListener {
+                    backToListListener.onClick(course = course)
+                }
+                ridingBtn.setOnClickListener {
+                    ridingCourseListener.onClick(course = course)
                 }
             }
         }
@@ -48,11 +51,16 @@ class CoursesMapAdapter : ListAdapter<Course, CoursesMapAdapter.BoardsViewHolder
         holder.setBind(getItem(position))
     }
 
-    interface DetailCourseListener {
+    interface BackToListListener {
         fun onClick(course: Course)
     }
 
-    lateinit var detailCourseListener: DetailCourseListener
+    interface RidingCourseListener {
+        fun onClick(course: Course)
+    }
+
+    lateinit var backToListListener: BackToListListener
+    lateinit var ridingCourseListener: RidingCourseListener
 }
 
 class CoursesMapDiffCallback : DiffUtil.ItemCallback<Course>() {

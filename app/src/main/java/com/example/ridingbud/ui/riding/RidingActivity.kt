@@ -68,13 +68,19 @@ class RidingActivity : AppCompatActivity() {
     private fun setAdapter() {
         // Adapter 설정
         val coursesMapAdapter = CoursesMapAdapter()
-        coursesMapAdapter.detailCourseListener =
-            object : CoursesMapAdapter.DetailCourseListener {
+        coursesMapAdapter.backToListListener =
+            object : CoursesMapAdapter.BackToListListener {
                 override fun onClick(course: Course) {
-                    // 코스 자세히 보기로 이동
-//                    val intent = Intent(this@MyBookmarkListActivity, )
-//                    intent.putExtra(ApplicationClass.COURSE_ITEM, course)
-//                    startActivity(intent)
+                    // 코스 목록으로 이동
+                    finish()
+                }
+            }
+        coursesMapAdapter.ridingCourseListener =
+            object : CoursesMapAdapter.RidingCourseListener {
+                override fun onClick(course: Course) {
+                    // 코스 목록으로 이동
+                    binding.courseRv.visibility = View.INVISIBLE
+                    binding.startingSelectBox.visibility = View.VISIBLE
                 }
             }
         // RecyclerView 설정
@@ -117,13 +123,11 @@ class RidingActivity : AppCompatActivity() {
             backBtn.setOnClickListener {
                 finish()
             }
-            myLocationBtn.setOnClickListener {
-
-            }
             // 출발지 선택 화면 설정
             startingCourseListBtn.setOnClickListener {
                 // 지도의 코스 목록 화면으로 이동
-
+                courseRv.visibility = View.VISIBLE
+                startingSelectBox.visibility = View.GONE
             }
             startingSelectBtn.setOnClickListener {
 
@@ -134,6 +138,8 @@ class RidingActivity : AppCompatActivity() {
             moveStartingSelectBtn.setOnClickListener {
                 // 출발지 선택 화면으로 이동
 
+                startingSelectBox.visibility = View.VISIBLE
+                endingSelectBox.visibility = View.GONE
             }
             endingSelectBtn.setOnClickListener {
 
