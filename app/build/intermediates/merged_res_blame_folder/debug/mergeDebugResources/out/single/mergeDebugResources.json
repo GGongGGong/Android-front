@@ -1,0 +1,422 @@
+[
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/drawable_course_map_background.xml.flat",
+        "source": "com.example.ridingbud.app-main-46:/drawable/course_map_background.xml"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/drawable_kakao_login_medium_wide.png.flat",
+        "source": "com.example.ridingbud.app-main-46:/drawable/kakao_login_medium_wide.png"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/drawable_gray_background_2.xml.flat",
+        "source": "com.example.ridingbud.app-main-46:/drawable/gray_background_2.xml"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/layout_activity_find_id.xml.flat",
+        "source": "com.example.ridingbud.app-main-46:/layout/activity_find_id.xml"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.ridingbud.app-main-46:/mipmap-hdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/drawable_profile_setting_btn_background.xml.flat",
+        "source": "com.example.ridingbud.app-main-46:/drawable/profile_setting_btn_background.xml"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/layout_access_dialog.xml.flat",
+        "source": "com.example.ridingbud.app-main-46:/layout/access_dialog.xml"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "com.example.ridingbud.app-main-46:/mipmap-xhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/drawable_riding_rv_background.xml.flat",
+        "source": "com.example.ridingbud.app-main-46:/drawable/riding_rv_background.xml"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/drawable_riding_btn_background.xml.flat",
+        "source": "com.example.ridingbud.app-main-46:/drawable/riding_btn_background.xml"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/layout_activity_my_review_list.xml.flat",
+        "source": "com.example.ridingbud.app-main-46:/layout/activity_my_review_list.xml"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/drawable_dialog_btn_background_1.xml.flat",
+        "source": "com.example.ridingbud.app-main-46:/drawable/dialog_btn_background_1.xml"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/drawable_review_button.png.flat",
+        "source": "com.example.ridingbud.app-main-46:/drawable/review_button.png"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.ridingbud.app-main-46:/mipmap-xxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/layout_activity_review.xml.flat",
+        "source": "com.example.ridingbud.app-main-46:/layout/activity_review.xml"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/drawable_profile_icon_1.png.flat",
+        "source": "com.example.ridingbud.app-main-46:/drawable/profile_icon_1.png"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/mipmap-xhdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.example.ridingbud.app-main-46:/mipmap-xhdpi/ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/drawable_setting_icon.png.flat",
+        "source": "com.example.ridingbud.app-main-46:/drawable/setting_icon.png"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.example.ridingbud.app-main-46:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/drawable_review_edit_icon.png.flat",
+        "source": "com.example.ridingbud.app-main-46:/drawable/review_edit_icon.png"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.ridingbud.app-main-46:/mipmap-xxxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/drawable_permission_location_icon.png.flat",
+        "source": "com.example.ridingbud.app-main-46:/drawable/permission_location_icon.png"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/drawable_right_arrow_icon.png.flat",
+        "source": "com.example.ridingbud.app-main-46:/drawable/right_arrow_icon.png"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/drawable_ic_now_location_button.xml.flat",
+        "source": "com.example.ridingbud.app-main-46:/drawable/ic_now_location_button.xml"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/mipmap-xxxhdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.example.ridingbud.app-main-46:/mipmap-xxxhdpi/ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/drawable_user_location_icon.png.flat",
+        "source": "com.example.ridingbud.app-main-46:/drawable/user_location_icon.png"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/drawable_edit_text_background.xml.flat",
+        "source": "com.example.ridingbud.app-main-46:/drawable/edit_text_background.xml"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/drawable_my_bookmark_background.xml.flat",
+        "source": "com.example.ridingbud.app-main-46:/drawable/my_bookmark_background.xml"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/drawable_back_icon.png.flat",
+        "source": "com.example.ridingbud.app-main-46:/drawable/back_icon.png"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/layout_fragment_myprofile.xml.flat",
+        "source": "com.example.ridingbud.app-main-46:/layout/fragment_myprofile.xml"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/drawable_signup_star_icon.png.flat",
+        "source": "com.example.ridingbud.app-main-46:/drawable/signup_star_icon.png"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/layout_item_review.xml.flat",
+        "source": "com.example.ridingbud.app-main-46:/layout/item_review.xml"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/drawable_profile_icon_default.png.flat",
+        "source": "com.example.ridingbud.app-main-46:/drawable/profile_icon_default.png"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/drawable_facility_icon.png.flat",
+        "source": "com.example.ridingbud.app-main-46:/drawable/facility_icon.png"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/drawable_dialog_background.xml.flat",
+        "source": "com.example.ridingbud.app-main-46:/drawable/dialog_background.xml"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/drawable_marker_icon.png.flat",
+        "source": "com.example.ridingbud.app-main-46:/drawable/marker_icon.png"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/drawable_profile_setting_background.xml.flat",
+        "source": "com.example.ridingbud.app-main-46:/drawable/profile_setting_background.xml"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/drawable_ic_search.xml.flat",
+        "source": "com.example.ridingbud.app-main-46:/drawable/ic_search.xml"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/mipmap-hdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.example.ridingbud.app-main-46:/mipmap-hdpi/ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.example.ridingbud.app-main-46:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/drawable_ic_thumb_up.png.flat",
+        "source": "com.example.ridingbud.app-main-46:/drawable/ic_thumb_up.png"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.example.ridingbud.app-main-46:/drawable/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/layout_activity_find_password.xml.flat",
+        "source": "com.example.ridingbud.app-main-46:/layout/activity_find_password.xml"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/layout_fragment_riding.xml.flat",
+        "source": "com.example.ridingbud.app-main-46:/layout/fragment_riding.xml"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/drawable_item_course_background.xml.flat",
+        "source": "com.example.ridingbud.app-main-46:/drawable/item_course_background.xml"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/layout_fragment_community.xml.flat",
+        "source": "com.example.ridingbud.app-main-46:/layout/fragment_community.xml"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/layout_fragment_convenience.xml.flat",
+        "source": "com.example.ridingbud.app-main-46:/layout/fragment_convenience.xml"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/layout_activity_convenience.xml.flat",
+        "source": "com.example.ridingbud.app-main-46:/layout/activity_convenience.xml"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/drawable_dialog_btn_background_2.xml.flat",
+        "source": "com.example.ridingbud.app-main-46:/drawable/dialog_btn_background_2.xml"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/drawable_level_background.xml.flat",
+        "source": "com.example.ridingbud.app-main-46:/drawable/level_background.xml"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/layout_activity_permission.xml.flat",
+        "source": "com.example.ridingbud.app-main-46:/layout/activity_permission.xml"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/drawable_down_arrow_icon.png.flat",
+        "source": "com.example.ridingbud.app-main-46:/drawable/down_arrow_icon.png"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "com.example.ridingbud.app-main-46:/mipmap-mdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/layout_item_course_map.xml.flat",
+        "source": "com.example.ridingbud.app-main-46:/layout/item_course_map.xml"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/drawable_login_btn_background.xml.flat",
+        "source": "com.example.ridingbud.app-main-46:/drawable/login_btn_background.xml"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/drawable_logo_ic.xml.flat",
+        "source": "com.example.ridingbud.app-main-46:/drawable/logo_ic.xml"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/drawable_review_delete_icon.png.flat",
+        "source": "com.example.ridingbud.app-main-46:/drawable/review_delete_icon.png"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/layout_item_review_course.xml.flat",
+        "source": "com.example.ridingbud.app-main-46:/layout/item_review_course.xml"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/drawable_myprofile_icon.png.flat",
+        "source": "com.example.ridingbud.app-main-46:/drawable/myprofile_icon.png"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/layout_riding_complete_dialog.xml.flat",
+        "source": "com.example.ridingbud.app-main-46:/layout/riding_complete_dialog.xml"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/drawable_ic_user.png.flat",
+        "source": "com.example.ridingbud.app-main-46:/drawable/ic_user.png"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/layout_activity_profile_setting.xml.flat",
+        "source": "com.example.ridingbud.app-main-46:/layout/activity_profile_setting.xml"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.ridingbud.app-main-46:/mipmap-xhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/drawable_riding_back_btn_background.xml.flat",
+        "source": "com.example.ridingbud.app-main-46:/drawable/riding_back_btn_background.xml"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/layout_activity_signup.xml.flat",
+        "source": "com.example.ridingbud.app-main-46:/layout/activity_signup.xml"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/drawable_community_icon.png.flat",
+        "source": "com.example.ridingbud.app-main-46:/drawable/community_icon.png"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/drawable_convenience_marker_icon.png.flat",
+        "source": "com.example.ridingbud.app-main-46:/drawable/convenience_marker_icon.png"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "com.example.ridingbud.app-main-46:/mipmap-hdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/drawable_logo_image.png.flat",
+        "source": "com.example.ridingbud.app-main-46:/drawable/logo_image.png"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/drawable_my_review_btn_background.xml.flat",
+        "source": "com.example.ridingbud.app-main-46:/drawable/my_review_btn_background.xml"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/drawable_ic_fire.xml.flat",
+        "source": "com.example.ridingbud.app-main-46:/drawable/ic_fire.xml"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/layout_activity_login.xml.flat",
+        "source": "com.example.ridingbud.app-main-46:/layout/activity_login.xml"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/drawable_mypage_option_background.xml.flat",
+        "source": "com.example.ridingbud.app-main-46:/drawable/mypage_option_background.xml"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.ridingbud.app-main-46:/mipmap-xxxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/menu_menu_bottom_nav.xml.flat",
+        "source": "com.example.ridingbud.app-main-46:/menu/menu_bottom_nav.xml"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/drawable_app_icon.png.flat",
+        "source": "com.example.ridingbud.app-main-46:/drawable/app_icon.png"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/layout_activity_course_detail.xml.flat",
+        "source": "com.example.ridingbud.app-main-46:/layout/activity_course_detail.xml"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.ridingbud.app-main-46:/mipmap-xxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/drawable_my_review_background.xml.flat",
+        "source": "com.example.ridingbud.app-main-46:/drawable/my_review_background.xml"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/drawable_signup_btn_background.xml.flat",
+        "source": "com.example.ridingbud.app-main-46:/drawable/signup_btn_background.xml"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/layout_activity_my_review.xml.flat",
+        "source": "com.example.ridingbud.app-main-46:/layout/activity_my_review.xml"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/layout_activity_my_bookmark_list.xml.flat",
+        "source": "com.example.ridingbud.app-main-46:/layout/activity_my_bookmark_list.xml"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/drawable_bookmark_off_icon.png.flat",
+        "source": "com.example.ridingbud.app-main-46:/drawable/bookmark_off_icon.png"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/drawable_find_id_btn_background.xml.flat",
+        "source": "com.example.ridingbud.app-main-46:/drawable/find_id_btn_background.xml"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/drawable_bookmark_on_icon.png.flat",
+        "source": "com.example.ridingbud.app-main-46:/drawable/bookmark_on_icon.png"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/layout_item_course.xml.flat",
+        "source": "com.example.ridingbud.app-main-46:/layout/item_course.xml"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.ridingbud.app-main-46:/mipmap-mdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/drawable_ic_pump.xml.flat",
+        "source": "com.example.ridingbud.app-main-46:/drawable/ic_pump.xml"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/layout_activity_main.xml.flat",
+        "source": "com.example.ridingbud.app-main-46:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/drawable_menu_selector_color.xml.flat",
+        "source": "com.example.ridingbud.app-main-46:/drawable/menu_selector_color.xml"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/mipmap-mdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.example.ridingbud.app-main-46:/mipmap-mdpi/ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/layout_activity_riding.xml.flat",
+        "source": "com.example.ridingbud.app-main-46:/layout/activity_riding.xml"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/mipmap-xxhdpi_ic_launcher_foreground.webp.flat",
+        "source": "com.example.ridingbud.app-main-46:/mipmap-xxhdpi/ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.example.ridingbud.app-main-46:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/layout_item_hot_course.xml.flat",
+        "source": "com.example.ridingbud.app-main-46:/layout/item_hot_course.xml"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/drawable_splash_rb_icon.png.flat",
+        "source": "com.example.ridingbud.app-main-46:/drawable/splash_rb_icon.png"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/drawable_splash_btn_background.xml.flat",
+        "source": "com.example.ridingbud.app-main-46:/drawable/splash_btn_background.xml"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/xml_backup_rules.xml.flat",
+        "source": "com.example.ridingbud.app-main-46:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/drawable_item_review_course_background.xml.flat",
+        "source": "com.example.ridingbud.app-main-46:/drawable/item_review_course_background.xml"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/drawable_my_location_icon.png.flat",
+        "source": "com.example.ridingbud.app-main-46:/drawable/my_location_icon.png"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/layout_activity_splash.xml.flat",
+        "source": "com.example.ridingbud.app-main-46:/layout/activity_splash.xml"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/drawable_profile_icon_2.png.flat",
+        "source": "com.example.ridingbud.app-main-46:/drawable/profile_icon_2.png"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/drawable_bike_icon.png.flat",
+        "source": "com.example.ridingbud.app-main-46:/drawable/bike_icon.png"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/xml_data_extraction_rules.xml.flat",
+        "source": "com.example.ridingbud.app-main-46:/xml/data_extraction_rules.xml"
+    },
+    {
+        "merged": "com.example.ridingbud.app-debug-44:/drawable_review_completed_button.png.flat",
+        "source": "com.example.ridingbud.app-main-46:/drawable/review_completed_button.png"
+    }
+]

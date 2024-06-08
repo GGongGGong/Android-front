@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         // 키 해시 구하기
-//        Log.d("KeyHash", "${Utility.getKeyHash(this)}")
+        Log.d("KeyHash", Utility.getKeyHash(this))
         setUi()
     }
 

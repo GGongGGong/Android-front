@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="filter_options">
+        <item>초급 목록</item>
+        <item>중급 목록</item>
+        <item>상급 목록</item>
+        <item>즐겨찾기 목록</item>
+    </string-array>
+    <color name="black">#FF000000</color>
+    <color name="blue1">#2D3D96</color>
+    <color name="blue2">#384AA6</color>
+    <color name="blue3">#384BB0</color>
+    <color name="blue4">#4053B8</color>
+    <color name="blue5">#019CE1</color>
+    <color name="gray1">#EEEEEE</color>
+    <color name="gray2">#8F8F8F</color>
+    <color name="green">#79C257</color>
+    <color name="orange">#FF5C00</color>
+    <color name="red">#FF0000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="yellow">#FFC700</color>
+    <string name="app_name">RidingBud</string>
+    <string name="kakao_app_key">91b8238b24afff9e6a6e914eb3fa086d</string>
+    <string name="kakao_app_key_2">kakao91b8238b24afff9e6a6e914eb3fa086d</string>
+    <style name="Base.Theme.RidingBud" parent="Theme.AppCompat.Light">
+        <item name="windowNoTitle">true</item>
+        
+        
+    </style>
+    <style name="Splash" parent="Theme.AppCompat.Light.NoActionBar"/>
+    <style name="Theme.RidingBud" parent="Base.Theme.RidingBud"/>
+</resources>
